@@ -5,16 +5,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Level Up Service — Recharges, paiements et gaming en Haïti</title>
-  <meta name="description" content="Level Up Service: recharges Free Fire, assistance PayPal, transferts Zelle/Wise/Stripe et facturation MonCash. 100% sécurisé et assisté via WhatsApp.">
-  <meta name="theme-color" content="#5b4bff">
+  <meta name="description" content="Level Up Service: recharges Free Fire (diamants), assistance PayPal, transferts Zelle/Wise/Stripe et facturation MonCash. 100% sécurisé et assisté via WhatsApp.">
+  <meta name="theme-color" content="#5b4bff" />
+  <link rel="canonical" href="https://www.levelupservice.ht" />
 
   <!-- Open Graph / Link preview -->
-  <!-- Remplace l’URL par le domaine final de ton site -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Level Up Service">
   <meta property="og:title" content="Level Up Service — Recharges, paiements et gaming en Haïti">
-  <meta property="og:description" content="Recharges Free Fire, assistance PayPal, Zelle/Wise/Stripe et MonCash. 100% sécurisé et assisté par WhatsApp.">
+  <meta property="og:description" content="Recharges Free Fire, assistance PayPal, Zelle/Wise/Stripe et MonCash. 100% sécurisé et assisté via WhatsApp.">
   <meta property="og:url" content="https://www.levelupservice.ht">
   <meta property="og:image" content="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg">
+  <meta property="og:image:secure_url" content="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg">
+  <meta property="og:image:alt" content="Logo Level Up Service">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="fr_HT">
@@ -25,29 +28,31 @@
   <meta name="twitter:description" content="Top-ups Free Fire, PayPal, Zelle/Wise/Stripe, MonCash. 100% sécurisé et assisté.">
   <meta name="twitter:image" content="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg">
 
-  <!-- Favicon (utilise le même logo) -->
-  <link rel="icon" href="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg" type="image/jpeg" />
+  <!-- Icons -->
+  <link rel="icon" href="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg" sizes="32x32" type="image/jpeg" />
+  <link rel="icon" href="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg" sizes="192x192" type="image/jpeg" />
   <link rel="apple-touch-icon" href="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg">
+  <meta name="apple-mobile-web-app-title" content="Level Up Service">
 
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg">
 
   <style>
     :root{
       --bg: #0b0b10;
-      --card: #10121a;
       --muted: #a7b0c0;
-      --text: #e6e9f2;
+      --text: #e9ecf5;
       --brand-1: #6b5bff;
       --brand-2: #00d4ff;
       --accent: #21ffa2;
-      --danger: #ff5d8f;
-      --glass: rgba(16,18,26,0.5);
-      --radius: 14px;
+      --radius: 16px;
       --shadow-1: 0 10px 30px rgba(0,0,0,0.35);
-      --shadow-2: 0 20px 50px rgba(0,0,0,0.45);
+      --shadow-2: 0 20px 60px rgba(0,0,0,0.5);
       --maxw: 1200px;
+      --header-h: 74px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -62,33 +67,32 @@
       line-height:1.55;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
+      scroll-behavior:smooth;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
+    :target{scroll-margin-top: calc(var(--header-h) + 14px)}
 
-    /* Header transparent stylé */
+    /* Header transparent & glissant */
     .header{
-      position:fixed; inset:0 0 auto 0; height:70px; z-index:999;
-      display:flex; align-items:center; transition:all .3s ease;
-      background:linear-gradient(to bottom, rgba(10,10,15,0.65), rgba(10,10,15,0));
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      position:fixed; top:0; left:0; right:0; height:var(--header-h); z-index:9999;
+      display:flex; align-items:center;
+      background:linear-gradient(to bottom, rgba(10,10,15,0.55), rgba(10,10,15,0));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(255,255,255,0.06);
+      transition:transform .35s ease, background .3s ease, box-shadow .2s ease;
+      transform: translateY(0);
     }
-    .header.scrolled{
-      background:rgba(10,10,15,0.8);
-      box-shadow: var(--shadow-1);
-      height:68px;
-    }
+    .header.solid{ background:rgba(10,10,15,0.8); box-shadow:var(--shadow-1) }
+    .header.hide{ transform: translateY(-100%) }
     .nav{
       width:100%; max-width:var(--maxw); margin:0 auto; padding:0 18px;
       display:flex; align-items:center; justify-content:space-between;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-    }
+    .brand{display:flex; align-items:center; gap:12px}
     .brand img{
-      width:44px; height:44px; border-radius:12px; object-fit:cover; box-shadow:0 6px 20px rgba(0,212,255,0.25);
+      width:46px; height:46px; border-radius:12px; object-fit:cover; box-shadow:0 6px 22px rgba(0,212,255,0.25);
     }
     .brand .name{
       font-family:"Poppins", sans-serif; font-weight:700; letter-spacing:0.2px;
@@ -97,44 +101,58 @@
       background: linear-gradient(100deg, var(--brand-1), var(--brand-2));
       -webkit-background-clip:text; background-clip:text; color:transparent;
     }
-    .menu{
-      display:flex; align-items:center; gap:20px;
-    }
+    .menu{display:flex; align-items:center; gap:18px}
     .menu a{
-      color:var(--muted); font-weight:500; padding:10px 12px; border-radius:10px; transition:color .2s, background .2s;
+      color:var(--muted); font-weight:600; padding:10px 12px; border-radius:10px; transition:color .2s, background .2s;
     }
-    .menu a:hover{color:#fff; background:rgba(255,255,255,0.05)}
+    .menu a:hover{color:#fff; background:rgba(255,255,255,0.06)}
     .cta{
       display:inline-flex; align-items:center; gap:10px; padding:10px 16px;
       background:linear-gradient(120deg, var(--brand-1), var(--brand-2));
-      color:#fff; border-radius:12px; font-weight:600; box-shadow:0 10px 24px rgba(0,212,255,0.25);
+      color:#fff; border-radius:12px; font-weight:700; box-shadow:0 10px 24px rgba(0,212,255,0.25);
     }
 
-    /* Layout */
-    .section{padding:120px 20px}
+    /* Mini bandeau stylé transparent (glissant) */
+    .micro{
+      position:fixed; top:var(--header-h); left:0; right:0; z-index:9998;
+      display:flex; justify-content:center; pointer-events:none; transition:opacity .3s ease, transform .35s ease;
+    }
+    .micro.hide{ transform: translateY(-14px); opacity:0 }
+    .micro .pill{
+      pointer-events:auto;
+      margin:10px auto; padding:8px 12px; display:flex; align-items:center; gap:10px;
+      border-radius:999px; color:#eafff7; font-weight:700; font-size:12px; letter-spacing:.2px;
+      background:linear-gradient(135deg, rgba(33,255,162,0.18), rgba(0,212,255,0.18));
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+    }
+    .micro .dot{width:8px;height:8px;border-radius:50%;background:#21ffa2; box-shadow:0 0 10px #21ffa2}
+
+    /* Sections */
+    .section{padding:130px 20px 110px}
     .container{max-width:var(--maxw); margin:0 auto}
     .hero{
-      padding-top:120px; padding-bottom:80px;
-      display:grid; grid-template-columns: 1.15fr 0.85fr; gap:28px; align-items:center;
+      padding-top:calc(var(--header-h) + 60px); padding-bottom:40px;
+      display:grid; grid-template-columns: 1.1fr 0.9fr; gap:28px; align-items:center;
     }
     .hero h1{
-      font-family:"Poppins", sans-serif; font-size: clamp(32px, 4.5vw, 56px); line-height:1.05; margin:0 0 14px;
+      font-family:"Poppins", sans-serif; font-size: clamp(34px, 4.8vw, 60px); line-height:1.04; margin:0 0 14px;
     }
     .subtitle{color:var(--muted); font-size: clamp(15px, 1.4vw, 18px)}
-    .badges{
-      display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 26px;
-    }
+
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 26px}
     .badge{
       padding:8px 12px; border-radius:999px; background:rgba(255,255,255,0.06);
       color:#eaf4ff; border:1px solid rgba(255,255,255,0.08);
-      font-weight:600; font-size:13px; letter-spacing:.2px;
+      font-weight:700; font-size:13px; letter-spacing:.2px;
     }
     .actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:10px}
     .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:600;
-      border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:#fff;
+      display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:700;
+      border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.05); color:#fff;
+      transition: background .2s ease, transform .2s ease;
     }
-    .btn:hover{background:rgba(255,255,255,0.07)}
+    .btn:hover{background:rgba(255,255,255,0.08); transform: translateY(-2px)}
     .btn-primary{
       background:linear-gradient(120deg, var(--brand-1), var(--brand-2)); border:none;
       box-shadow:0 10px 24px rgba(0,212,255,0.25);
@@ -147,8 +165,7 @@
       backdrop-filter: blur(10px);
     }
     .hero-card .thumb{
-      aspect-ratio: 16/10; border-radius:12px; overflow:hidden; margin-bottom:16px; position:relative;
-      background: #0e1020;
+      aspect-ratio: 16/10; border-radius:14px; overflow:hidden; margin-bottom:16px; position:relative; background:#0e1020;
     }
     .hero-card .thumb::after{
       content:""; position:absolute; inset:0;
@@ -161,13 +178,11 @@
     .hero-meta{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
     .chip{
       font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);
-      color:#e8f7ff; font-weight:600;
+      color:#e8f7ff; font-weight:700;
     }
 
     /* Grids */
-    .grid{
-      display:grid; gap:18px;
-    }
+    .grid{display:grid; gap:18px}
     .grid-3{grid-template-columns: repeat(3, 1fr)}
     .grid-4{grid-template-columns: repeat(4, 1fr)}
     .card{
@@ -178,7 +193,7 @@
     }
     .card:hover{transform: translateY(-4px); border-color: rgba(0,212,255,0.25); background: rgba(255,255,255,0.06)}
     .icon{
-      width:42px; height:42px; display:grid; place-items:center; border-radius:10px;
+      width:44px; height:44px; display:grid; place-items:center; border-radius:10px;
       background: radial-gradient(120px 60px at 30% 20%, rgba(0,212,255,0.25), transparent 60%), rgba(255,255,255,0.05);
       border:1px solid rgba(255,255,255,0.08);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
@@ -196,7 +211,7 @@
       border-radius:14px; padding:14px;
     }
     .step .num{
-      width:28px; height:28px; border-radius:8px; display:grid; place-items:center; font-weight:700;
+      width:28px; height:28px; border-radius:8px; display:grid; place-items:center; font-weight:800;
       background:linear-gradient(120deg, var(--brand-1), var(--brand-2));
     }
 
@@ -218,7 +233,6 @@
       padding:26px 20px; border-top:1px solid rgba(255,255,255,0.08);
       color:var(--muted); background: rgba(10,10,15,0.55); backdrop-filter: blur(6px);
     }
-
     /* WhatsApp floating button */
     .wa-float{
       position:fixed; bottom:18px; right:18px; z-index:1000;
@@ -236,7 +250,7 @@
 
     /* Responsive */
     @media (max-width: 1024px){
-      .hero{grid-template-columns: 1fr; padding-top:110px}
+      .hero{grid-template-columns: 1fr; padding-top:calc(var(--header-h) + 30px)}
     }
     @media (max-width: 860px){
       .menu .hide-sm{display:none}
@@ -249,229 +263,247 @@
       .grid-3,.grid-4{grid-template-columns: 1fr}
       .steps{grid-template-columns: 1fr}
       .brand .name{display:none}
-      .wa-float{padding:12px}
     }
 
-    /* Small entrance animation */
+    /* Reveal animation */
     .reveal{opacity:0; transform: translateY(14px); transition: all .5s ease}
     .reveal.visible{opacity:1; transform: translateY(0)}
+
+    /* Accessibilité */
+    @media (prefers-reduced-motion: reduce){
+      .reveal{transition:none; transform:none; opacity:1}
+      .header, .micro, .wa-float{transition:none}
+    }
   </style>
 </head>
 <body>
-  <!-- Header transparent stylé -->
-  <header class="header" id="header">
-    <nav class="nav">
-      <div class="brand">
+  <!-- En-tête transparent + glissant -->
+  <header class="header" id="header" aria-label="En-tête du site">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Accueil Level Up Service">
         <img src="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg" alt="Logo Level Up Service">
         <div class="name">Level <span>Up</span> Service</div>
-      </div>
+      </a>
       <div class="menu">
         <a href="#services">Services</a>
-        <a href="#gaming" class="hide-sm">Jeux</a>
-        <a href="#paiements" class="hide-sm">Paiements</a>
+        <a href="#gaming">Jeux</a>
+        <a href="#paiements">Paiements</a>
         <a href="#contact">Contact</a>
-        <a class="cta" href="https://wa.me/50937663629" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="section">
-    <div class="container hero">
-      <div>
-        <h1 class="reveal">Recharges, paiements et gaming — simple, rapide, sécurisé</h1>
-        <p class="subtitle reveal">En Haïti, on s’occupe de tout: <b>Free Fire (diamants)</b>, assistance <b>PayPal</b>, transferts <b>Zelle/Wise/Stripe</b> et facturation <b>MonCash</b>. Service <b>100% sécurisé</b> et <b>assisté via WhatsApp</b>.</p>
-        <div class="badges reveal">
-          <div class="badge">Zelle</div>
-          <div class="badge">PayPal</div>
-          <div class="badge">Wise</div>
-          <div class="badge">Stripe</div>
-          <div class="badge">MonCash</div>
-        </div>
-        <div class="actions reveal">
-          <a class="btn btn-primary" href="https://wa.me/50937663629" target="_blank" rel="noopener">Commander sur WhatsApp</a>
-          <a class="btn" href="#services">Voir nos services</a>
-        </div>
-      </div>
-
-      <div class="hero-card reveal">
-        <div class="thumb">
-          <img src="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg" alt="Level Up Service — Hero">
-        </div>
-        <h3>Assistance premium & exécution rapide</h3>
-        <p>Notre équipe valide votre demande, facture via MonCash et exécute votre commande en toute transparence.</p>
-        <div class="hero-meta">
-          <div class="chip">Support WhatsApp 7j/7</div>
-          <div class="chip">Paiement MonCash</div>
-          <div class="chip">Sécurisé</div>
-        </div>
-      </div>
+  <!-- Mini bandeau stylé, transparent et glissant -->
+  <div class="micro" id="micro">
+    <div class="pill">
+      <div class="dot" aria-hidden="true"></div>
+      100% sécurisé — assistance WhatsApp & facturation MonCash
     </div>
-  </section>
+  </div>
 
-  <!-- Services -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2 class="reveal" style="font-family:Poppins, sans-serif; margin:0 0 14px">Nos services principaux</h2>
-      <p class="subtitle reveal">Des solutions complètes pour recharger, payer et jouer sans friction.</p>
-
-      <div class="grid grid-3" style="margin-top:18px">
-        <div class="card reveal">
-          <div class="icon">💎</div>
-          <h4>Diamants Free Fire</h4>
-          <p>Top-up rapide et vérifié. Choisissez le pack, payez via MonCash, on crédite votre compte.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">🪪</div>
-          <h4>Assistance PayPal</h4>
-          <p>Création/validation, conseils et solutions adaptées au contexte haïtien.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">🕹️</div>
-          <h4>Cartes & crédits gaming</h4>
-          <p>Garena, Google Play, PlayStation, etc. Codes livrés rapidement et en toute sécurité.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">💸</div>
-          <h4>Zelle / Wise / Stripe</h4>
-          <p>Transferts et encaissements assistés, avec suivi et confirmation.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">📱</div>
-          <h4>Facturation MonCash</h4>
-          <p>Paiement local simple et sûr, reçu et facture à l’appui.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">🛟</div>
-          <h4>Support premium</h4>
-          <p>Accompagnement WhatsApp de bout en bout, réponses rapides et claires.</p>
-        </div>
-      </div>
-
-      <div class="steps reveal" style="margin-top:24px">
-        <div class="step">
-          <div class="num">1</div>
-          <h4 style="margin:8px 0 6px">Écris-nous</h4>
-          <p class="subtitle">Explique ton besoin sur WhatsApp.</p>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <h4 style="margin:8px 0 6px">Validation</h4>
-          <p class="subtitle">On confirme le service et le montant.</p>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <h4 style="margin:8px 0 6px">Paiement</h4>
-          <p class="subtitle">Tu paies via MonCash, en toute sécurité.</p>
-        </div>
-        <div class="step">
-          <div class="num">4</div>
-          <h4 style="margin:8px 0 6px">Exécution</h4>
-          <p class="subtitle">On livre, tu es notifié immédiatement.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Jeux -->
-  <section id="gaming" class="section">
-    <div class="container">
-      <h2 class="reveal" style="font-family:Poppins, sans-serif; margin:0 0 14px">Gaming: Free Fire et plus</h2>
-      <p class="subtitle reveal">Des recharges fiables, sans prise de tête, au meilleur service.</p>
-      <div class="grid grid-4" style="margin-top:18px">
-        <div class="card reveal">
-          <div class="icon">💎</div>
-          <h4>Free Fire</h4>
-          <p>Diamants crédibilisés rapidement, preuves à l’appui.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">🎮</div>
-          <h4>Garena</h4>
-          <p>Top-ups et codes officiels.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">🛍️</div>
-          <h4>Google Play</h4>
-          <p>Cartes et crédits multi-montants.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">🎧</div>
-          <h4>PlayStation</h4>
-          <p>PSN cards et abonnements.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Paiements -->
-  <section id="paiements" class="section">
-    <div class="container">
-      <h2 class="reveal" style="font-family:Poppins, sans-serif; margin:0 0 14px">Méthodes de paiement</h2>
-      <p class="subtitle reveal">On s’adapte à tes besoins, avec transparence et sécurité.</p>
-      <div class="grid grid-3" style="margin-top:18px">
-        <div class="card reveal">
-          <div class="icon">📲</div>
-          <h4>MonCash</h4>
-          <p>Facturation officielle, reçu de paiement et suivi.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">💬</div>
-          <h4>WhatsApp</h4>
-          <p>Assistance en direct, étapes claires et confirmations.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon">🧾</div>
-          <h4>Factures & preuves</h4>
-          <p>Chaque commande est tracée et justifiée.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container contact">
-      <div class="panel reveal">
-        <h3 style="font-family:Poppins, sans-serif; margin:0 0 10px">Parlons de ta commande</h3>
-        <p class="subtitle">Réponse rapide et accompagnement complet sur WhatsApp.</p>
-        <div class="actions" style="margin-top:6px">
-          <a class="btn btn-primary" href="https://wa.me/50937663629" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-          <a class="btn" href="mailto:Levelupservice.co@gmail.com">Envoyer un e-mail</a>
-        </div>
-        <div class="list">
-          <div class="list-item">📧 <b>Email:</b> <span>Levelupservice.co@gmail.com</span></div>
-          <div class="list-item">📞 <b>Téléphone:</b> <span><a href="tel:+50937663629">+509 37 66 36 29</a></span></div>
-          <div class="list-item">📍 <b>Pays:</b> <span>Haïti</span></div>
-          <div class="list-item">🕒 <b>Disponibilité:</b> <span>7j/7</span></div>
-        </div>
-      </div>
-      <div class="panel reveal">
-        <h3 style="font-family:Poppins, sans-serif; margin:0 0 10px">Pourquoi nous choisir</h3>
-        <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
-          <div class="card" style="padding:12px">
-            <div class="icon">⚡</div>
-            <h4>Rapide</h4>
-            <p>Process simplifié et exécution express.</p>
+  <!-- Contenu principal -->
+  <main id="top">
+    <!-- Hero -->
+    <section class="section">
+      <div class="container hero">
+        <div>
+          <h1 class="reveal">Recharges, paiements et gaming — simple, rapide, sécurisé</h1>
+          <p class="subtitle reveal">
+            En Haïti, on s’occupe de tout: <b>Free Fire (diamants)</b>, assistance <b>PayPal</b>, transferts <b>Zelle/Wise/Stripe</b> et facturation <b>MonCash</b>.
+            Service <b>100% sécurisé</b> et <b>assisté via WhatsApp</b>.
+          </p>
+          <div class="badges reveal">
+            <div class="badge">Zelle</div>
+            <div class="badge">PayPal</div>
+            <div class="badge">Wise</div>
+            <div class="badge">Stripe</div>
+            <div class="badge">MonCash</div>
           </div>
-          <div class="card" style="padding:12px">
-            <div class="icon">🛡️</div>
-            <h4>Sécurisé</h4>
-            <p>MonCash, reçus et preuves de livraison.</p>
+          <div class="actions reveal">
+            <a class="btn btn-primary" href="https://wa.me/50947723168?text=Bonjour%2C%20je%20veux%20passer%20une%20commande%20🚀" target="_blank" rel="noopener">Commander sur WhatsApp</a>
+            <a class="btn" href="#services">Voir nos services</a>
           </div>
-          <div class="card" style="padding:12px">
-            <div class="icon">🤝</div>
-            <h4>Assisté</h4>
-            <p>Accompagnement humain de bout en bout.</p>
+        </div>
+
+        <div class="hero-card reveal" aria-label="Carte d’aperçu des services">
+          <div class="thumb">
+            <img src="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg" alt="Level Up Service — Aperçu">
           </div>
-          <div class="card" style="padding:12px">
-            <div class="icon">✨</div>
-            <h4>Pro & clair</h4>
-            <p>Infos nettes, tarifs clairs, zéro ambiguïté.</p>
+          <h3>Assistance premium & exécution rapide</h3>
+          <p>Validation, facturation MonCash et exécution avec transparence et preuves.</p>
+          <div class="hero-meta">
+            <div class="chip">Support WhatsApp 7j/7</div>
+            <div class="chip">Paiement MonCash</div>
+            <div class="chip">Sécurisé</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="reveal" style="font-family:Poppins, sans-serif; margin:0 0 14px">Nos services principaux</h2>
+        <p class="subtitle reveal">Des solutions complètes pour recharger, payer et jouer sans friction.</p>
+
+        <div class="grid grid-3" style="margin-top:18px">
+          <div class="card reveal">
+            <div class="icon">💎</div>
+            <h4>Diamants Free Fire</h4>
+            <p>Top-up rapide et vérifié. Tu choisis le pack, tu paies via MonCash, on crédite ton compte.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🪪</div>
+            <h4>Assistance PayPal</h4>
+            <p>Level Up Service facilite la création de votre compte PayPal, le tout 100 % en ligne. Gagnez du temps et sécurisez vos paiements en quelques clics.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🕹️</div>
+            <h4>Cartes & crédits gaming</h4>
+            <p>Garena, Google Play, PlayStation, etc. Codes livrés rapidement et en sécurité.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">💸</div>
+            <h4>Zelle / Wise / Stripe</h4>
+            <p>Transferts et encaissements assistés avec suivi et confirmation.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">📱</div>
+            <h4>Facturation MonCash</h4>
+            <p>Paiement local simple et suivi avec reçu.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🛟</div>
+            <h4>Support premium</h4>
+            <p>Accompagnement WhatsApp de bout en bout, réponses claires.</p>
+          </div>
+        </div>
+
+        <div class="steps reveal" style="margin-top:24px">
+          <div class="step">
+            <div class="num">1</div>
+            <h4 style="margin:8px 0 6px">Écris-nous</h4>
+            <p class="subtitle">Explique ton besoin sur WhatsApp.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h4 style="margin:8px 0 6px">Validation</h4>
+            <p class="subtitle">On confirme le service et le montant.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h4 style="margin:8px 0 6px">Paiement</h4>
+            <p class="subtitle">Tu paies via MonCash en sécurité.</p>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <h4 style="margin:8px 0 6px">Exécution</h4>
+            <p class="subtitle">On livre et on t’informe immédiatement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jeux -->
+    <section id="gaming" class="section">
+      <div class="container">
+        <h2 class="reveal" style="font-family:Poppins, sans-serif; margin:0 0 14px">Gaming: Free Fire et plus</h2>
+        <p class="subtitle reveal">Des recharges fiables au meilleur service.</p>
+        <div class="grid grid-4" style="margin-top:18px">
+          <div class="card reveal">
+            <div class="icon">💎</div>
+            <h4>Free Fire</h4>
+            <p>Diamants crédités rapidement, preuves à l’appui.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🎮</div>
+            <h4>Garena</h4>
+            <p>Top-ups et codes officiels.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🛍️</div>
+            <h4>Google Play</h4>
+            <p>Cartes et crédits multi-montants.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🎧</div>
+            <h4>PlayStation</h4>
+            <p>Cartes PSN et abonnements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paiements -->
+    <section id="paiements" class="section">
+      <div class="container">
+        <h2 class="reveal" style="font-family:Poppins, sans-serif; margin:0 0 14px">Méthodes de paiement</h2>
+        <p class="subtitle reveal">On s’adapte à tes besoins, avec transparence et sécurité.</p>
+        <div class="grid grid-3" style="margin-top:18px">
+          <div class="card reveal">
+            <div class="icon">📲</div>
+            <h4>MonCash</h4>
+            <p>Facturation officielle, reçu et suivi.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">💬</div>
+            <h4>WhatsApp</h4>
+            <p>Assistance en direct, étapes claires et confirmations.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🧾</div>
+            <h4>Factures & preuves</h4>
+            <p>Chaque commande est tracée et justifiée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div class="panel reveal">
+          <h3 style="font-family:Poppins, sans-serif; margin:0 0 10px">Parlons de ta commande</h3>
+          <p class="subtitle">Réponse rapide et accompagnement complet sur WhatsApp.</p>
+          <div class="actions" style="margin-top:6px">
+            <a class="btn btn-primary" href="https://wa.me/50947723168?text=Salut%20Level%20Up%2C%20j%E2%80%99ai%20besoin%20de%20%3A%20" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+            <a class="btn" href="mailto:Levelupservice.co@gmail.com">Envoyer un e-mail</a>
+          </div>
+          <div class="list">
+            <div class="list-item">📧 <b>Email:</b> <span>Levelupservice.co@gmail.com</span></div>
+            <div class="list-item">📞 <b>Téléphone:</b> <span><a href="tel:+50947723168">+509 47 72 31 68</a></span></div>
+            <div class="list-item">📍 <b>Pays:</b> <span>Haïti</span></div>
+            <div class="list-item">🕒 <b>Disponibilité:</b> <span>7j/7</span></div>
+          </div>
+        </div>
+        <div class="panel reveal">
+          <h3 style="font-family:Poppins, sans-serif; margin:0 0 10px">Pourquoi nous choisir</h3>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+            <div class="card" style="padding:12px">
+              <div class="icon">⚡</div>
+              <h4>Rapide</h4>
+              <p>Process simplifié et exécution express.</p>
+            </div>
+            <div class="card" style="padding:12px">
+              <div class="icon">🛡️</div>
+              <h4>Sécurisé</h4>
+              <p>MonCash, reçus et preuves de livraison.</p>
+            </div>
+            <div class="card" style="padding:12px">
+              <div class="icon">🤝</div>
+              <h4>Assisté</h4>
+              <p>Accompagnement humain de bout en bout.</p>
+            </div>
+            <div class="card" style="padding:12px">
+              <div class="icon">✨</div>
+              <h4>Pro & clair</h4>
+              <p>Infos nettes, tarifs clairs, zéro ambiguïté.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -480,18 +512,15 @@
         <img src="https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg" alt="Logo" style="width:28px; height:28px; border-radius:8px; object-fit:cover">
         <span>© <span id="year"></span> Level Up Service — Tous droits réservés</span>
       </div>
-      <div style="color:#c6cede">WhatsApp: <a href="https://wa.me/50937663629" target="_blank" rel="noopener">+509 37 66 36 29</a></div>
-    </div>
   </footer>
 
-  <!-- WhatsApp floating -->
-  <a class="wa-float" href="https://wa.me/50937663629" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">
-    <div class="dot"></div>
-    WhatsApp
+  <!-- Bouton WhatsApp flottant -->
+  <a class="wa-float" id="waBtn" href="https://wa.me/50947723168?text=Bonjour%2C%20je%20veux%20une%20recharge%20ou%20un%20paiement%20💬" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">
+    <div class="dot" aria-hidden="true"></div>
+    <span class="label">WhatsApp</span>
   </a>
 
-  <!-- JSON-LD (améliore l’aperçu marque) -->
-  <!-- Remplace l’URL par le domaine final de ton site -->
+  <!-- JSON-LD (marque) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -500,11 +529,12 @@
     "url": "https://www.levelupservice.ht",
     "logo": "https://i.postimg.cc/Qt5zCB0w/IMG-20250826-WA0012.jpg",
     "email": "Levelupservice.co@gmail.com",
-    "telephone": "+50937663629",
+    "telephone": "+50947723168",
+    "sameAs": ["https://wa.me/50947723168"],
     "contactPoint": [{
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "telephone": "+50937663629",
+      "telephone": "+50947723168",
       "email": "Levelupservice.co@gmail.com",
       "availableLanguage": ["French", "Haitian Creole"],
       "areaServed": "HT"
@@ -514,19 +544,30 @@
 
   <!-- Scripts -->
   <script>
-    // Header shrink on scroll
     const header = document.getElementById('header');
+    const micro = document.getElementById('micro');
+    const waBtn = document.getElementById('waBtn');
     const reveals = document.querySelectorAll('.reveal');
     const yearEl = document.getElementById('year');
     yearEl.textContent = new Date().getFullYear();
 
+    // En-tête: devient solide après léger scroll, se cache en scroll down, réapparaît en scroll up
+    let lastY = window.scrollY;
     const onScroll = () => {
-      if(window.scrollY > 10){ header.classList.add('scrolled'); }
-      else { header.classList.remove('scrolled'); }
+      const y = window.scrollY;
+      header.classList.toggle('solid', y > 12);
+      header.classList.toggle('hide', y > lastY && y > 80);
+      micro.classList.toggle('hide', y > 60);
+
+      // Cacher le bouton près du bas pour éviter de chevaucher le footer
+      const nearBottom = (window.innerHeight + y) > (document.body.offsetHeight - 80);
+      waBtn.classList.toggle('hide', nearBottom);
+
+      lastY = y;
     };
     window.addEventListener('scroll', onScroll); onScroll();
 
-    // Simple reveal animation
+    // Reveal animations
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
@@ -538,4 +579,4 @@
     reveals.forEach(el=>io.observe(el));
   </script>
 </body>
-</html>
+  </html>
